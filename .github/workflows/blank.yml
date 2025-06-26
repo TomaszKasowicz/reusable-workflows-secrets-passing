@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   hello_dispatch:
-    uses: TomaszKasowicz/reusable-workflows-secrets-passing/.github/workflows/dispatch@main
+    uses: TomaszKasowicz/reusable-workflows-secrets-passing/.github/workflows/dispatch.yaml@main
     secrets:
       FOO: ${{ secrets.BAR }}
   # This workflow contains a single job called "build"
