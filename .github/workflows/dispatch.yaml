@@ -16,3 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello world"
+
+      - run: echo ${{ secrets.FOO }} >> foo.txt
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+        # Artifact name
+          name: foo # optional, default is artifact
+          path: foo.txt
+          if-no-files-found: error
+          retention-days: 1       
