@@ -1,0 +1,18 @@
+on:
+  workflow_call:
+    inputs:
+      foo:
+        type: string
+        default: 'foo'
+        required: false
+    secrets:
+      FOO:
+        description: foo
+        required: true
+
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world"
